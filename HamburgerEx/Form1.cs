@@ -679,7 +679,11 @@ namespace HamburgerEx
             }
 
             IsRunningMakingThread = false;
-            button.Enabled = true;
+            MethodInvoker @delegate = delegate ()
+            {
+                button.Enabled = true;
+            };
+            button.Invoke(@delegate);
 
             MakingThread.Abort();
         }

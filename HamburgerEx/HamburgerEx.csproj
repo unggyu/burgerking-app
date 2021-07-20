@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A67FD5E-030C-4421-AA49-85D326E890C9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HamburgerEx</RootNamespace>
+    <AssemblyName>HamburgerEx</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Bson, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.4\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.4\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Burger.cs" />
+    <Compile Include="Models\Drink.cs" />
+    <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Context\MenuItemData.cs" />
+    <Compile Include="Models\DrinkNutrient.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.Events.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Context\MenuData.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="MyButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\Nutrient.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\SetMenuItem.cs" />
+    <Compile Include="Models\Side.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\buttons\bkSpecialDefault.png" />
+    <Content Include="images\buttons\bkSpecialHover.png" />
+    <Content Include="images\buttons\bncDefault.png" />
+    <Content Include="images\buttons\bncHover.png" />
+    <Content Include="images\buttons\breakfastDefault.png" />
+    <Content Include="images\buttons\breakfastHover.png" />
+    <Content Include="images\buttons\burgerDefault.png" />
+    <Content Include="images\buttons\burgerHover.png" />
+    <Content Include="images\buttons\dkDefault.png" />
+    <Content Include="images\buttons\dkHover.png" />
+    <Content Include="images\buttons\drinkDefault.png" />
+    <Content Include="images\buttons\drinkHover.png" />
+    <Content Include="images\buttons\gnsDefault.png" />
+    <Content Include="images\buttons\gnsHover.png" />
+    <Content Include="images\buttons\setMenuDefault.png" />
+    <Content Include="images\buttons\setMenuHover.png" />
+    <Content Include="images\buttons\sideDefault.png" />
+    <Content Include="images\buttons\sideHover.png" />
+    <Content Include="images\buttons\skDefault.png" />
+    <Content Include="images\buttons\skHover.png" />
+    <Content Include="images\buttons\soDefault.png" />
+    <Content Include="images\buttons\soHover.png" />
+    <Content Include="images\buttons\whopperDefault.png" />
+    <Content Include="images\buttons\whopperHover.png" />
+    <Content Include="images\hamburgerProcess\1.png" />
+    <Content Include="images\hamburgerProcess\2.png" />
+    <Content Include="images\hamburgerProcess\3.png" />
+    <Content Include="images\hamburgerProcess\4.png" />
+    <Content Include="images\hamburgerProcess\5.png" />
+    <Content Include="images\hamburgerProcess\6.png" />
+    <Content Include="images\menuItems\2000치즈버거big.jpg" />
+    <Content Include="images\menuItems\2000치즈버거small.jpg" />
+    <Content Include="images\menuItems\2000치킨버거big.jpg" />
+    <Content Include="images\menuItems\2000치킨버거small.jpg" />
+    <Content Include="images\menuItems\BLT뉴올리언스치킨버거big.jpg" />
+    <Content Include="images\menuItems\BLT뉴올리언스치킨버거small.jpg" />
+    <Content Include="images\menuItems\BLT뉴올리언스치킨버거세트big.jpg" />
+    <Content Include="images\menuItems\BLT뉴올리언스치킨버거세트small.jpg" />
+    <Content Include="images\menuItems\BLT롱치킨버거big.jpg" />
+    <Content Include="images\menuItems\BLT롱치킨버거small.jpg" />
+    <Content Include="images\menuItems\BLT롱치킨버거세트big.jpg" />
+    <Content Include="images\menuItems\BLT롱치킨버거세트small.jpg" />
+    <Content Include="images\menuItems\갈릭스테이크버거big.jpg" />
+    <Content Include="images\menuItems\갈릭스테이크버거small.jpg" />
+    <Content Include="images\menuItems\갈릭스테이크버거세트big.jpg" />
+    <Content Include="images\menuItems\갈릭스테이크버거세트small.jpg" />
+    <Content Include="images\menuItems\너겟킹 10조각big.jpg" />
+    <Content Include="images\menuItems\너겟킹 10조각small.jpg" />
+    <Content Include="images\menuItems\너겟킹 4조각big.jpg" />
+    <Content Include="images\menuItems\너겟킹 4조각small.jpg" />
+    <Content Include="images\menuItems\너겟킹 6조각big.jpg" />
+    <Content Include="images\menuItems\너겟킹 6조각small.jpg" />
+    <Content Include="images\menuItems\뉴올리언스치킨버거big.jpg" />
+    <Content Include="images\menuItems\뉴올리언스치킨버거small.jpg" />
+    <Content Include="images\menuItems\뉴올리언스치킨버거세트big.jpg" />
+    <Content Include="images\menuItems\뉴올리언스치킨버거세트small.jpg" />
+    <Content Include="images\menuItems\딸기선데big.jpg" />
+    <Content Include="images\menuItems\딸기선데small.jpg" />
+    <Content Include="images\menuItems\롱킹big.jpg" />
+    <Content Include="images\menuItems\롱킹small.jpg" />
+    <Content Include="images\menuItems\롱킹세트big.jpg" />
+    <Content Include="images\menuItems\롱킹세트small.jpg" />
+    <Content Include="images\menuItems\미닛메이드big.jpg" />
+    <Content Include="images\menuItems\미닛메이드small.jpg" />
+    <Content Include="images\menuItems\바닐라선데big.jpg" />
+    <Content Include="images\menuItems\바닐라선데small.jpg" />
+    <Content Include="images\menuItems\불고기버거big.jpg" />
+    <Content Include="images\menuItems\불고기버거small.jpg" />
+    <Content Include="images\menuItems\불고기버거세트big.jpg" />
+    <Content Include="images\menuItems\불고기버거세트small.jpg" />
+    <Content Include="images\menuItems\불고기와퍼big.jpg" />
+    <Content Include="images\menuItems\불고기와퍼small.jpg" />
+    <Content Include="images\menuItems\불고기와퍼세트big.jpg" />
+    <Content Include="images\menuItems\불고기와퍼세트small.jpg" />
+    <Content Include="images\menuItems\불고기와퍼주니어big.jpg" />
+    <Content Include="images\menuItems\불고기와퍼주니어small.jpg" />
+    <Content Include="images\menuItems\불고기와퍼주니어세트big.jpg" />
+    <Content Include="images\menuItems\불고기와퍼주니어세트small.jpg" />
+    <Content Include="images\menuItems\생수%28순수%29big.jpg" />
+    <Content Include="images\menuItems\생수%28순수%29small.jpg" />
+    <Content Include="images\menuItems\스프라이트big.jpg" />
+    <Content Include="images\menuItems\스프라이트small.jpg" />
+    <Content Include="images\menuItems\아메리카노big.jpg" />
+    <Content Include="images\menuItems\아메리카노small.jpg" />
+    <Content Include="images\menuItems\어니언링big.jpg" />
+    <Content Include="images\menuItems\어니언링small.jpg" />
+    <Content Include="images\menuItems\오리지널롱치킨버거big.jpg" />
+    <Content Include="images\menuItems\오리지널롱치킨버거small.jpg" />
+    <Content Include="images\menuItems\오리지널롱치킨버거세트big.jpg" />
+    <Content Include="images\menuItems\오리지널롱치킨버거세트small.jpg" />
+    <Content Include="images\menuItems\와퍼big.jpg" />
+    <Content Include="images\menuItems\와퍼small.jpg" />
+    <Content Include="images\menuItems\와퍼세트big.jpg" />
+    <Content Include="images\menuItems\와퍼세트small.jpg" />
+    <Content Include="images\menuItems\와퍼주니어big.jpg" />
+    <Content Include="images\menuItems\와퍼주니어small.jpg" />
+    <Content Include="images\menuItems\와퍼주니어세트big.jpg" />
+    <Content Include="images\menuItems\와퍼주니어세트small.jpg" />
+    <Content Include="images\menuItems\초코선데big.jpg" />
+    <Content Include="images\menuItems\초코선데small.jpg" />
+    <Content Include="images\menuItems\치즈버거big.jpg" />
+    <Content Include="images\menuItems\치즈버거small.jpg" />
+    <Content Include="images\menuItems\치즈버거세트big.jpg" />
+    <Content Include="images\menuItems\치즈버거세트small.jpg" />
+    <Content Include="images\menuItems\치즈와퍼big.jpg" />
+    <Content Include="images\menuItems\치즈와퍼small.jpg" />
+    <Content Include="images\menuItems\치즈와퍼세트big.jpg" />
+    <Content Include="images\menuItems\치즈와퍼세트small.jpg" />
+    <Content Include="images\menuItems\치즈와퍼주니어big.jpg" />
+    <Content Include="images\menuItems\치즈와퍼주니어small.jpg" />
+    <Content Include="images\menuItems\치즈와퍼주니어세트big.jpg" />
+    <Content Include="images\menuItems\치즈와퍼주니어세트small.jpg" />
+    <Content Include="images\menuItems\치즈프라이big.jpg" />
+    <Content Include="images\menuItems\치즈프라이small.jpg" />
+    <Content Include="images\menuItems\치킨프라이big.jpg" />
+    <Content Include="images\menuItems\치킨프라이small.jpg" />
+    <Content Include="images\menuItems\컵아이스크림big.jpg" />
+    <Content Include="images\menuItems\컵아이스크림small.jpg" />
+    <Content Include="images\menuItems\코카-콜라 제로big.jpg" />
+    <Content Include="images\menuItems\코카-콜라 제로small.jpg" />
+    <Content Include="images\menuItems\코카-콜라big.jpg" />
+    <Content Include="images\menuItems\코카-콜라small.jpg" />
+    <Content Include="images\menuItems\콘샐러드big.jpg" />
+    <Content Include="images\menuItems\콘샐러드small.jpg" />
+    <Content Include="images\menuItems\콰트로치즈와퍼big.jpg" />
+    <Content Include="images\menuItems\콰트로치즈와퍼small.jpg" />
+    <Content Include="images\menuItems\콰트로치즈와퍼세트big.jpg" />
+    <Content Include="images\menuItems\콰트로치즈와퍼세트small.jpg" />
+    <Content Include="images\menuItems\콰트로치즈와퍼주니어big.jpg" />
+    <Content Include="images\menuItems\콰트로치즈와퍼주니어small.jpg" />
+    <Content Include="images\menuItems\콰트로치즈와퍼주니어세트big.jpg" />
+    <Content Include="images\menuItems\콰트로치즈와퍼주니어세트small.jpg" />
+    <Content Include="images\menuItems\텐더킹 2조각big.jpg" />
+    <Content Include="images\menuItems\텐더킹 2조각small.jpg" />
+    <Content Include="images\menuItems\텐더킹 4조각big.jpg" />
+    <Content Include="images\menuItems\텐더킹 4조각small.jpg" />
+    <Content Include="images\menuItems\텐더킹 6조각big.jpg" />
+    <Content Include="images\menuItems\텐더킹 6조각small.jpg" />
+    <Content Include="images\menuItems\통새우스테이크버거big.jpg" />
+    <Content Include="images\menuItems\통새우스테이크버거small.jpg" />
+    <Content Include="images\menuItems\통새우스테이크버거세트big.jpg" />
+    <Content Include="images\menuItems\통새우스테이크버거세트small.jpg" />
+    <Content Include="images\menuItems\통새우와퍼big.jpg" />
+    <Content Include="images\menuItems\통새우와퍼small.jpg" />
+    <Content Include="images\menuItems\통새우와퍼세트big.jpg" />
+    <Content Include="images\menuItems\통새우와퍼세트small.jpg" />
+    <Content Include="images\menuItems\통새우와퍼주니어big.jpg" />
+    <Content Include="images\menuItems\통새우와퍼주니어small.jpg" />
+    <Content Include="images\menuItems\통새우와퍼주니어세트big.jpg" />
+    <Content Include="images\menuItems\통새우와퍼주니어세트small.jpg" />
+    <Content Include="images\menuItems\프렌치프라이big.jpg" />
+    <Content Include="images\menuItems\프렌치프라이small.jpg" />
+    <Content Include="images\menuItems\핫초코big.jpg" />
+    <Content Include="images\menuItems\핫초코small.jpg" />
+    <Content Include="images\menuItems\햄버거big.jpg" />
+    <Content Include="images\menuItems\햄버거small.jpg" />
+    <Content Include="images\menuItems\환타오렌지big.jpg" />
+    <Content Include="images\menuItems\환타오렌지small.jpg" />
+    <Content Include="images\titles\main_title_bkspecial.jpg" />
+    <Content Include="images\titles\main_title_breakfast.jpg" />
+    <Content Include="images\titles\main_title_burger1.jpg" />
+    <Content Include="images\titles\main_title_burger2.jpg" />
+    <Content Include="images\titles\main_title_drink.jpg" />
+    <Content Include="images\titles\main_title_side.jpg" />
+    <Content Include="images\titles\sub_title_BeefChicken.jpg" />
+    <Content Include="images\titles\sub_title_Garlic.jpg" />
+    <Content Include="images\titles\sub_title_Hero.jpg" />
+    <Content Include="images\titles\sub_title_SpecialOffer.jpg" />
+    <Content Include="images\titles\sub_title_Whopper.jpg" />
+    <Content Include="images\titles\sub_title_Wow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\drinkProcess\" />
+    <Folder Include="images\sideProcess\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
